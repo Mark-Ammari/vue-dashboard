@@ -1,0 +1,33 @@
+-why do we need to begin with template?
+
+-what is the render for in the apps main.js section?
+render: h => h(App)
+
+-what are the targets on each initial link?
+<li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
+
+-why do we need a main.js and also have a separate script in our app.vue? It's
+like having two javaScript files.
+
+X:
+import Vue from 'vue'
+import App from './App.vue'
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
+
+vs
+
+Y:
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
+}
+
+- 
