@@ -9,18 +9,23 @@
 
 <script>
     export default {
-        props: ['url'],
+        
+        props: ['url', "success"],
+
+        data: function() {
+            return { check: this.success }
+        },
     
     methods: {
-        checkSuccess(){
-            console.log('I am running')
-            fetch(this.url)
-              .then(response => response.json())
-                .then(myJson => vm.successRate = myJson.success)
-            //       console.log('I am running')
-            // this.$http.get(this.url + '.json').then(response => response.json())
-            // .then(myJson => myJson.Success)
-          },
+        checkSuccess: function(){
+            // console.log('I am running')
+            // fetch(this.url)
+            // .then(response => response.json())
+            // .then(myJson => this.check = myJson.success)
+                  console.log('I am running')
+            this.$http.get(this.url).then(response => response.json())
+            .then(myJson => this.check = myJson.Success)
+          },    
         changeUrl() {
             this.$emit('changeUrlbase', this.url)
         }  
