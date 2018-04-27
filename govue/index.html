@@ -2,10 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
     <title>vuegodashboard</title>
   </head>
   <body>
-    <div id="app"></div>
+   <!-- Needs css -->
+    <div class="nav-bar">
+      <ul>
+        <li>Home</li>
+        <li>Dashboard</li>
+      </ul>
+    </div>
+
+    <!-- Needs css -->
+    <div class="side-bar">
+      <ul>
+        <li>Home</li>
+        <li>Dashboard</li>
+        <li>Articles</li>
+        <li>Gallery</li>
+        <li>Meet Mark</li>
+        <li>Meet Yorranshell</li>
+      </ul>
+    </div>
+    <!-- Will be a vue instance. Needs css and needs timers/periodic updates -->
+    <div class="content">
+      <div class="infoBoxes">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+      </div>
+      <!-- Will be a vue instance. Needs css and should be interactive -->
+      <div id="graph"></div>
+      <div id="app"></div>
+      <div id="two"></div>
+    </div>
+
+    <div class="comments">
+        <img src="https://raw.githubusercontent.com/kylebebak/kylebebak.github.io/master/_assets/img/comments-scalia-lat.png"></img>
+    </div>
     <script src="/dist/build.js"></script>
   </body>
 </html>

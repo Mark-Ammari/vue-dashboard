@@ -1,0 +1,17 @@
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  display: block;
+}
+
+.infoBoxes {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  position: static;
+}
+
+.comments {
+  width: 80%;
+  margin: auto;
+}
