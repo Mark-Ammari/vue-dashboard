@@ -4,7 +4,10 @@ import App from './App.vue'
 // import IPChecker from './IPChecker.vue'
 import VueRouter from 'vue-router'
 import { routes } from './routes'
-
+import VueWidgets from 'vue-widgets'
+// import 'vue-widgets/dist/styles/vue-widgets.css'
+ 
+Vue.use(VueWidgets)
 Vue.use(VueRouter)
 Vue.use(VueResource);
 

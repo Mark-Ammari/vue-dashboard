@@ -1,9 +1,31 @@
 <template>
 <div>
-    <app-navbar></app-navbar>          
-        <div>
-            <canvas id="planet-chart"></canvas>
-        </div> 
+     <app-navbar></app-navbar>
+
+     <div style="margin-left:200px;" class="container">
+        <div class="row">
+
+        <div class="col-xs-6">
+        <transition name="fade" appear>
+            <div style="margin-top:60px;background-color:lightgrey;">
+                <canvas id="planet-chart"></canvas>
+            </div>
+        </transition>
+        </div>
+       
+        <div class="col-xs-6">
+        <transition name="fade" appear>
+            <div style="margin-top:60px;background-color:lightgrey;">
+                <canvas id="pie-chart"></canvas>
+            </div>
+        </transition>
+        </div>
+        
+        
+
+        </div>
+        </div>
+        
 </div>
 </template>
 
@@ -11,15 +33,22 @@
     import NavBar from '../NavBar.vue'
     import Chart from 'chart.js';
     import planetChartData from '../../chart-data.js';
+    import barChartData from '../../chart-data2.js';
+    import Calender from "../Calender.vue"
 
     export default {   
         data: function() {
             return {
+                data: [],
                 planetChartData: planetChartData,
+                barChartData: barChartData
             }
         }, 
-        mounted() {
+        mounted(){
             this.createChart('planet-chart', this.planetChartData);
+            this.createChart('pie-chart', this.barChartData);
+
+        
         },
         methods: {
             createChart(chartId, chartData) {
@@ -28,12 +57,29 @@
                     type: chartData.type,
                     data: chartData.data,
                     options: chartData.options,
-                });
-            }         
+                })
+            },         
         },
         components: {
-            appNavbar: NavBar
+            appNavbar: NavBar,
+            appCalender: Calender
         }
 
     }
 </script>
+
+<style>
+    .fade-enter {
+        opacity: 0;
+    }
+    .fade-enter-active {
+        transition: opacity 1s;
+    }
+    .fade-leave {
+
+    }
+    .fade-leave-active {
+        transition: opacity 2s;
+        opacity: 0;
+    }
+</style>

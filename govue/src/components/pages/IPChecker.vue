@@ -4,10 +4,10 @@
     <div class="container">
       <h1>{{ title }}</h1>
       <br>
-        <appBox :success.sync="success"></appBox>
+        <appBox :success="success"></appBox>
       <br>
       <div class="row">
-        <appUserInput :success.sync="success" :url="url" @changeUrlbase="changeUrl"></appUserInput>
+        <appUserInput :success="success" :url="url" @changeUrlbase="changeUrl"></appUserInput>
       </div>
       </div>
 </div>
@@ -17,13 +17,13 @@
     import UserInput from '../UserInput.vue';
     import Box from '../Box.vue';
     import NavBar from '../NavBar.vue';
-    const urlbase = 'https://19tztqev18.execute-api.us-west-2.amazonaws.com/dev/tag?id=';
+    const urlbase = 'https://kyv0geao18.execute-api.us-west-2.amazonaws.com/beta/simpleapi?ip=';
     export default {
       data: function() {
         return {
           title: 'Fetching...',
-          success: '',
-          url: urlbase + 'mark'
+          success: false,
+          url: urlbase + '0.0.0.0'
         }
       },
       components: {

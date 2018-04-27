@@ -11,20 +11,21 @@
     export default {
         
         props: ['url', "success"],
-
-        data: function() {
-            return { check: this.success }
-        },
     
     methods: {
         checkSuccess: function(){
-            // console.log('I am running')
-            // fetch(this.url)
-            // .then(response => response.json())
-            // .then(myJson => this.check = myJson.success)
-                  console.log('I am running')
-            this.$http.get(this.url).then(response => response.json())
-            .then(myJson => this.check = myJson.Success)
+            console.log('I am running')
+            fetch(this.url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson.success)
+    this.success = myJson.success;
+  });
+            //       console.log('I am running')
+            // this.$http.get(this.url).then(response => response.json())
+            // .then(myJson => this.check = myJson.Success)
           },    
         changeUrl() {
             this.$emit('changeUrlbase', this.url)
