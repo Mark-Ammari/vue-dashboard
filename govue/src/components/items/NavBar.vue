@@ -2,9 +2,9 @@
   <div class="side-nav">
         <router-link to="/" tag="a" active-class="active" exact><a>Home</a></router-link>
         <router-link to="/ipchecker" tag="a" active-class="active"><a>IP-Checker</a></router-link>
-        <router-link to="/" tag="a" active-class="active" exact><a>Maps</a></router-link>
-        <router-link to="/" tag="a" active-class="active" exact><a>About</a></router-link>
-        <router-link to="/ipchecker" tag="a" active-class="active"><a>Contact</a></router-link>
+        <router-link to="/maps" tag="a" active-class="active" exact><a>Maps</a></router-link>
+        <router-link to="/about" tag="a" active-class="active" exact><a>About</a></router-link>
+        <router-link to="/contact" tag="a" active-class="active"><a>Contact</a></router-link>
     </div>
 </template>
 

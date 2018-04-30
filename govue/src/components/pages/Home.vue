@@ -1,3 +1,4 @@
+<!-- Still need to work on responsiveness -->
 <template>
 <div>
      <app-navbar></app-navbar>
@@ -7,7 +8,7 @@
 
         <div class="col-xs-6">
             <transition name="fade" appear>
-                <div style="margin-top:15px;background-color:lightgrey;">
+                <div class="chart-container">
                     <canvas id="planet-chart"></canvas>
                 </div>
             </transition>
@@ -15,7 +16,7 @@
 
         <div class="col-xs-6">
             <transition name="fade" appear>
-                <div style="margin-top:15px;background-color:lightgrey;">
+                <div class="chart-container">
                     <canvas id="pie-chart"></canvas>
                 </div>
             </transition>
@@ -75,6 +76,12 @@
 </script>
 
 <style>
+
+    .chart-container{
+        margin-top:15px;
+        background-color:lightgrey;
+    }
+
     .fade-enter {
         opacity: 0;
     }

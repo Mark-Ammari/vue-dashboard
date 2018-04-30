@@ -7,12 +7,12 @@
         <div class="block" :class="{true: this.success, false: !this.success}"></div>
       <br>
       <div class="row">
-        <button type="button" class="btn btn-primary" @click="checkSuccess">Click</button>
+        <button id="mainBtn" type="button" class="btn btn-primary" @click="checkSuccess">Click</button>
         <input type="text" placeholder="IP-Address" v-on:keydown.enter="changeUrl">
         <br></br>
         <p>{{ url }} {{ blockCounter }}/{{ unblockCounter }}</p>
-    </div>
       </div>
+    </div>
 </div>
 </template>
 
@@ -62,6 +62,13 @@
 </script>
 
 <style>
+
+    .container {
+      margin-left: 160px;
+      padding: 5% 5%;
+      font-family: Times, sans-serif;
+    }
+
     .block {
         background-color: gray;
         width: 100px;
@@ -75,5 +82,10 @@
 
     .false {
         background-color: red;
+    }
+
+    #mainBtn {
+      margin-top: 15px;
+      margin-left: 15px;
     }
 </style>

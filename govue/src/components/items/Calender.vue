@@ -9,7 +9,7 @@
     </div>
 
     <ul class="weekdays">
-      <li>Mo</li>
+      <li>Mo</li> <!-- Sunday is the first day of the week. -->
       <li>Tu</li>
       <li>We</li>
       <li>Th</li>
