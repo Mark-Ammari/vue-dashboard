@@ -1,3 +1,4 @@
+<!-- Still need to work on responsiveness -->
 <template>
 <div>
      <app-navbar></app-navbar>
@@ -7,15 +8,15 @@
 
         <div class="col-xs-6">
             <transition name="fade" appear>
-                <div style="margin-top:15px;background-color:lightgrey;">
+                <div class="chart-container">
                     <canvas id="planet-chart"></canvas>
                 </div>
             </transition>
         </div>
-       
+
         <div class="col-xs-6">
             <transition name="fade" appear>
-                <div style="margin-top:15px;background-color:lightgrey;">
+                <div class="chart-container">
                     <canvas id="pie-chart"></canvas>
                 </div>
             </transition>
@@ -28,33 +29,33 @@
                  </transition>
             </div>
         </div>
-        
+
         </div>
         </div>
-        
+
 </div>
 </template>
 
 <script>
-    import NavBar from '../NavBar.vue'
+    import NavBar from '../items/NavBar.vue'
     import Chart from 'chart.js';
     import planetChartData from '../../chart-data.js';
     import barChartData from '../../chart-data2.js';
-    import Calender from "../Calender.vue"
+    import Calender from "../items/Calender.vue"
 
-    export default {   
+    export default {
         data: function() {
             return {
                 data: [],
                 planetChartData: planetChartData,
                 barChartData: barChartData
             }
-        }, 
+        },
         mounted(){
             this.createChart('planet-chart', this.planetChartData);
             this.createChart('pie-chart', this.barChartData);
 
-        
+
         },
         methods: {
             createChart(chartId, chartData) {
@@ -64,7 +65,7 @@
                     data: chartData.data,
                     options: chartData.options,
                 })
-            },         
+            },
         },
         components: {
             appNavbar: NavBar,
@@ -75,6 +76,12 @@
 </script>
 
 <style>
+
+    .chart-container{
+        margin-top:15px;
+        background-color:lightgrey;
+    }
+
     .fade-enter {
         opacity: 0;
     }

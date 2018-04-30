@@ -7,17 +7,17 @@
         <div class="block" :class="{true: this.success, false: !this.success}"></div>
       <br>
       <div class="row">
-        <button type="button" class="btn btn-primary" @click="checkSuccess">Click</button>
+        <button id="mainBtn" type="button" class="btn btn-primary" @click="checkSuccess">Click</button>
         <input type="text" placeholder="IP-Address" v-on:keydown.enter="changeUrl">
         <br></br>
         <p>{{ url }} {{ blockCounter }}/{{ unblockCounter }}</p>
-    </div>  
       </div>
+    </div>
 </div>
 </template>
 
 <script>
-    import NavBar from '../NavBar.vue';
+    import NavBar from '../items/NavBar.vue';
     const urlbase = 'https://kyv0geao18.execute-api.us-west-2.amazonaws.com/beta/simpleapi?ip=';
     export default {
       data() {
@@ -51,22 +51,29 @@
             }).then(function(myJson) {
               console.log(myJson.success)
               return vm.success = myJson.success;
-            });       
-      },    
+            });
+      },
         changeUrl() {
             return this.url = urlbase + event.target.value
         },
       }
-        
+
   }
 </script>
 
 <style>
+
+    .container {
+      margin-left: 160px;
+      padding: 5% 5%;
+      font-family: Times, sans-serif;
+    }
+
     .block {
         background-color: gray;
         width: 100px;
         height: 100px;
-        border: 3px solid black; 
+        border: 3px solid black;
     }
 
     .true {
@@ -75,5 +82,10 @@
 
     .false {
         background-color: red;
+    }
+
+    #mainBtn {
+      margin-top: 15px;
+      margin-left: 15px;
     }
 </style>
