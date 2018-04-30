@@ -6,23 +6,29 @@
         <div class="row">
 
         <div class="col-xs-6">
-        <transition name="fade" appear>
-            <div style="margin-top:60px;background-color:lightgrey;">
-                <canvas id="planet-chart"></canvas>
-            </div>
-        </transition>
+            <transition name="fade" appear>
+                <div style="margin-top:15px;background-color:lightgrey;">
+                    <canvas id="planet-chart"></canvas>
+                </div>
+            </transition>
         </div>
        
         <div class="col-xs-6">
-        <transition name="fade" appear>
-            <div style="margin-top:60px;background-color:lightgrey;">
-                <canvas id="pie-chart"></canvas>
+            <transition name="fade" appear>
+                <div style="margin-top:15px;background-color:lightgrey;">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            </transition>
+        </div>
+
+        <div class="row">
+            <div style="margin-top:15px;" class="col-xs-12">
+                 <transition name="fade" appear>
+                    <appCalender></appCalender>
+                 </transition>
             </div>
-        </transition>
         </div>
         
-        
-
         </div>
         </div>
         
