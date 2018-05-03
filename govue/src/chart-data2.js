@@ -3,34 +3,22 @@
 export var barChartData = {  
     type: 'bar',
       data: {
-        labels: ['2018-01-28'],
+        labels: ['Blocked IP-Address','Unblocked IP-Address'],
         datasets: [
           { // one line graph
             label: 'Blocked IP-Address',
-            data: [20],
+            data: [],
             backgroundColor: [
               'rgba(255, 0, 0, 1)',
-             
+              'rgba(71, 183,132,.5)',
             ],
             borderColor: [
+              'black',
               'black'
             ],
             borderWidth: 2,
-            fill: true,
+            fill: false,
           },
-          { // another line graph
-            label: 'Unblocked IP-Address',
-            data: [20],
-            backgroundColor: [
-              'rgba(71, 183,132,.5)'
-            ],
-            borderColor: [
-              'black'
-  
-            ],
-            borderWidth: 2,
-            fill: true,
-          }
         ]
       },
       options: {

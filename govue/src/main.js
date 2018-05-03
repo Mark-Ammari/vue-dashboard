@@ -7,8 +7,6 @@ import { routes } from './routes'
 import VueWidgets from 'vue-widgets'
 // import 'vue-widgets/dist/styles/vue-widgets.css'
 
-export const eventBus = new Vue()
-
 Vue.use(VueWidgets)
 Vue.use(VueRouter)
 Vue.use(VueResource);

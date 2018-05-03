@@ -29,6 +29,13 @@
                  </transition>
             </div>
         </div>
+        <div class="row">
+            <br></br>
+            <button class="btn btn-primary" @click="updateChart">Update</button>
+            <button class="btn btn-success" @click="unblocked++">Unblocked</button>
+            <button class="btn btn-danger" @click="blocked++">Blocked</button>
+            <p>{{ unblocked }}/{{ blocked }}</p>
+        </div>
 
         </div>
         </div>
@@ -42,11 +49,12 @@
     import planetChartData from '../../chart-data.js';
     import barChartData from '../../chart-data2.js';
     import Calender from "../items/Calender.vue"
-
+    import IPChecker from "../pages/IPChecker.vue"
     export default {
         data: function() {
             return {
-                data: [],
+                blocked: 0,
+                unblocked: 0,
                 planetChartData: planetChartData,
                 barChartData: barChartData
             }
@@ -54,10 +62,21 @@
         mounted(){
             this.createChart('planet-chart', this.planetChartData);
             this.createChart('pie-chart', this.barChartData);
-
-
         },
         methods: {
+            updateChart(){
+                if(this.planetChartData.data.datasets[0].data.length != 0 && barChartData.data.datasets[0].data.length != 0) {
+                    this.planetChartData.data.datasets[0].data.pop()
+                    this.planetChartData.data.datasets[0].data.pop()
+                    this.barChartData.data.datasets[0].data.pop()
+                    this.barChartData.data.datasets[0].data.pop()
+                } else {
+                    this.planetChartData.data.datasets[0].data.push(this.blocked)
+                    this.planetChartData.data.datasets[0].data.push(this.unblocked)
+                    this.barChartData.data.datasets[0].data.push(this.blocked)
+                    this.barChartData.data.datasets[0].data.push(this.unblocked)
+                }  
+            },
             createChart(chartId, chartData) {
                 const ctx = document.getElementById(chartId);
                 const myChart = new Chart(ctx, {

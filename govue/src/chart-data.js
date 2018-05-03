@@ -7,7 +7,7 @@ export var planetChartData = {
       datasets: [
         { // one line graph
           label: 'Blocked IP-Address',
-          data: [5,10],
+          data: [],
           backgroundColor: [
             'rgba(255, 0, 0, 1)', 
             'rgba(71, 183,132,.5)'

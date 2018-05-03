@@ -10,8 +10,9 @@
         <button id="mainBtn" type="button" class="btn btn-primary" @click="checkSuccess">Click</button>
         <input type="text" placeholder="IP-Address" v-on:keydown.enter="changeUrl">
         <br></br>
-        <p>{{ url }} {{ blockCounter }}/{{ unblockCounter }}</p>
+        <p>{{ url }}</p>
       </div>
+        <h3>{{ blockCounter }}/{{ unblockCounter }} blocked/unblocked {{ update }}</h3>
     </div>
 </div>
 </template>
@@ -32,16 +33,15 @@
       components: {
           appNavbar: NavBar
       },
-      watch: {
-        success() {
-          if(this.checkSuccess()) {
-            this.unblockCounter++;
+      computed: {
+        update() {
+          if(this.success) {
+            this.blockCounter+=1;
           } else {
-            this.blockCounter++;
+            this.unblockCounter+=1;
           }
         }
       },
-
       methods: {
         checkSuccess() {
           let vm = this;
@@ -55,8 +55,8 @@
       },
         changeUrl() {
             return this.url = urlbase + event.target.value
-        },
-      }
+      },
+    }
 
   }
 </script>
