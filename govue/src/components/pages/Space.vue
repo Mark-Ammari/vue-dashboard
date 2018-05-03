@@ -58,7 +58,7 @@
     <div class="row">
 
         <div class="col-xs-6">
-            <button class="btn btn-primary" @click="checkSpace">Click Me</button>
+            <button class="btn btn-primary" @click="getSpaceApi">Click Me</button>
         </div>
 
         <div class="col-xs-3">
@@ -128,7 +128,7 @@
             appNavbar: NavBar,
         },
         methods: {
-             checkSpace() {
+             getSpaceApi() {
                  let vm = this
              fetch(this.url).then(function(response) {
             return response.json();
