@@ -88,4 +88,17 @@
       margin-top: 15px;
       margin-left: 15px;
     }
+        .fade-enter {
+        opacity: 0;
+    }
+    .fade-enter-active {
+        transition: opacity 1s;
+    }
+    .fade-leave {
+
+    }
+    .fade-leave-active {
+        transition: opacity 2s;
+        opacity: 0;
+    }
 </style>

@@ -5,14 +5,17 @@
      <h1>Earth Exploration</h1>
      <div class="row">
      <div class="col-xs-9"> 
+     <transition name="fade" appear>
      <table class="table table-bordered">
     <thead>
       <tr>
+     
         <th>Centroid Cordinates</th>
         <th>Dscovr J2000 Position</th>
         <th>Lunar J2000 Position</th>
         <th>Sun J2000 Position</th>
         <th>Attitude Quaternions</th>
+       
       </tr>
     </thead>
     <tbody>
@@ -46,6 +49,7 @@
       </tr>
     </tbody>
   </table>
+  </transition>
   <div class="col-xs-3">
   </div>
   </div>
@@ -61,7 +65,9 @@
 
         <div class="col-xs-3">
         </div>
-    </div>        
+    </div>    
+
+        <br></br>    
         
         <div class="row">
         <div class="col-xs-3">
@@ -69,7 +75,9 @@
             <p>{{ date }}</p>
         </div>
         <div class="col-xs-6">
-            <img style="width:620px;height:450px;" :src="image">
+        <transition name="fade">
+            <img v-show="show" style="width:620px;height:450px;" :src="image">
+        </transition>    
         </div>
         <div class="col-xs-3">
         </div>
@@ -85,6 +93,7 @@
     export default {
         data: function() {
             return {
+                show: false,
                 index: 0,
                 url: 'https://api.nasa.gov/EPIC/api/natural?api_key=' + urlbase,
                 image: '',
@@ -126,6 +135,7 @@
              fetch(this.url).then(function(response) {
             return response.json();
             }).then(function(myJson) {
+                    vm.show = true
                     vm.date = myJson[vm.index].date.replace(/-/g, "/").substring(0,10)
                    vm.image = 'https://epic.gsfc.nasa.gov/archive/natural/' + vm.date + '/png/' + myJson[vm.index].image + '.png'
                     vm.caption = myJson[vm.index].caption
@@ -153,3 +163,18 @@
         
 }
 </script>
+<style >
+    .fade-enter {
+        opacity: 0;
+    }
+    .fade-enter-active {
+        transition: opacity 1s;
+    }
+    .fade-leave {
+
+    }
+    .fade-leave-active {
+        transition: opacity 2s;
+        opacity: 0;
+    }
+</style>
