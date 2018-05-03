@@ -58,9 +58,7 @@
     <div class="row">
 
         <div class="col-xs-6">
-            <button class="btn btn-primary" @click="checkSpace">Start</button>
-            <button class="btn btn-primary" @click="prev">Previous</button>
-            <button class="btn btn-primary" @click="next">Next</button>
+            <button class="btn btn-primary" @click="checkSpace">Click Me</button>
         </div>
 
         <div class="col-xs-3">
@@ -135,6 +133,8 @@
              fetch(this.url).then(function(response) {
             return response.json();
             }).then(function(myJson) {
+                vm.index += 1
+            vm.index = vm.index % 21
                     vm.show = true
                     vm.date = myJson[vm.index].date.replace(/-/g, "/").substring(0,10)
                    vm.image = 'https://epic.gsfc.nasa.gov/archive/natural/' + vm.date + '/png/' + myJson[vm.index].image + '.png'
@@ -145,20 +145,10 @@
                     vm.lunarj2000position = myJson[vm.index].lunar_j2000_position
                     vm.attitudeQuaternions = myJson[vm.index].attitude_quaternions
                                        console.log(vm.image)
+                                       
 
             });
              },
-        next() {
-            this.index += 1
-            this.index = this.index % 21
-        },
-
-        prev() {
-            if (this.index === 0) {
-                this.index = 21
-            }
-            this.index -= 1
-        }
     }
         
 }
