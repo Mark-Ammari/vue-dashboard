@@ -24,7 +24,7 @@
       data() {
         return {
           title: 'Fetching...',
-          success: false,
+          success: false,  //default
           url: urlbase + '0.0.0.0',
           blockCounter: 0,
           unblockCounter: 0

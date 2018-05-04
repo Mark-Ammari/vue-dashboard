@@ -19,11 +19,13 @@
       <div class="meet-dev">
         <div class="box-padding">
           <h2 style="margin: 5% 15% 0% 0%">{{ dev1 }}</h2>
-            <img class="meet-dev-imgLeft" src="../../assets/random.png">
-            <p class="meet-dev-text">Orci varius natoque penatibus et magnis dis
-              parturient montes, nascetur ridiculus mus. In finibus ut augue mattis
-              condimentum. Fusce ullamcorper libero neque, at laoreet nunc tempor ut.
-               Mauris commodo metus orci, quis varius metus condimentum eu.</p>
+            <div class="meet-dev-text">
+              <img class="meet-dev-imgLeft" src="../../assets/Mark3.jpg">
+              <p class="meet-dev-text">Orci varius natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. In finibus ut augue mattis
+                condimentum. Fusce ullamcorper libero neque, at laoreet nunc tempor ut.
+                 Mauris commodo metus orci, quis varius metus condimentum eu.</p>
+            </div>
           </div>
       </div>
 
@@ -31,7 +33,7 @@
         <div class="box-padding">
           <h2 style="margin: 5% 0% 0% 15%">{{ dev2 }}</h2>
             <div class="meet-dev-text">
-                <img class="meet-dev-imgRight" src="../../assets/random.png">
+              <img class="meet-dev-imgRight" src="../../assets/Yorranshell.jpg">
               <p class="meet-dev-text">Curabitur placerat euismod neque nec commodo. Sed
               lobortis, massa eu scelerisque tempus, arcu mi vulputate tellus, vel
               rhoncus quam arcu eget sem. Etiam vel molestie lorem. Donec eget nisl dui.
@@ -83,9 +85,9 @@
   .meet-dev-imgLeft {
     display: inline;
     max-width: 30%;
-    max-height: 100%;
+    max-height: auto;
     margin: 5% 15% 0% 0%;
-    border-radius: 50%;/* for circular image */
+    border-radius: 50%; /* for circular image */
     float:left;
     clear:both;
   }
@@ -95,7 +97,7 @@
     max-width: 30%;
     max-height: auto;
     margin: 5% 0% 0% 15%;
-    border-radius: 50%;/* for circular image */
+    border-radius: 50%; /* for circular image */
     float:right;
     clear:both;
   }
