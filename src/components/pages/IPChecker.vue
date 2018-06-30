@@ -9,8 +9,12 @@
       <div class="row">
         <button id="mainBtn" type="button" class="btn btn-primary" @click="checkSuccess">Click</button>
         <input type="text" placeholder="IP-Address" v-on:keydown.enter="changeUrl">
-        <br></br>
+        
         <p>{{ url }}</p>
+        <p>In order for this to work you need to download
+          the addon for your browser called CORS.
+        </p>
+        <p> make sure when you type an IP in the bar that you press enter before you press click.</p>
       </div>
         <h3>{{ blockCounter }}/{{ unblockCounter }} blocked/unblocked {{ update }}</h3>
     </div>
